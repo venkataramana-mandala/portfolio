@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANDALA VENKATARAMANA - Portfolio</title>
+    <style>
+        /* Color Scheme */
+        :root {
+            --primary-color: #507792; /* Professional Blue */
+            --secondary-color: #444;
+            --background-color: #f9f9f9;
+            --text-color: #333;
+            --hover-color: #343086;
+        }
+
+        /* General Reset */
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            transition: all 0.3s ease;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Navbar */
+        nav {
+            background: var(--secondary-color);
+            padding: 20px 10%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        nav ul li a:hover {
+            background: var(--hover-color);
+            border-bottom: 2px solid var(--hover-color);
+        }
+
+        /* Header Section */
+        header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #a4bb76, #517792);
+            text-align: center;
+        }
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            box-shadow:  4px solid white;
+        }
+        header h1 {
+            font-size: 3em;
+            font-weight: bold;
+        }
+        header p {
+            font-size: 1.3em;
+            max-width: 600px;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 10%;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        #about p {
+            font-size: 1.2em;
+            color: #000000;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        /* Education Section */
+        .education-item {
+            background: rgb(233, 238, 239);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .education-item h3 {
+            color: var(--primary-color);
+            font-size: 1.5em;
+        }
+        .education-item p {
+            color: #000000;
+            font-size: 1.1em;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .skill-card {
+            background: rgb(233, 238, 239);
+            color: var(--text-color);
+            width: 250px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+        .skill-card h3 {
+            font-size: 1.3em;
+            color: var(--primary-color);
+        }
+        .skill-card p {
+            font-size: 1.1em;
+            color: #ccc;
+        }
+
+        /* Projects Section */
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .project {
+            background: rgb(233, 238, 239);
+            padding: 20px;
+            border-radius: 10px;
+            width: 48%;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .project h3 {
+            color: var(--primary-color);
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .project p {
+            color: black;
+            font-size: 1.1em;
+        }
+
+        /* Certification Section */
+        #certifications {
+            background: rgb(233, 238, 239);
+            padding: 60px 10%;
+            text-align: center;
+            color: black;
+        }
+        .certifications {
+            background: rgb(233, 238, 239);
+            padding: 20px;
+            border-radius: 10px;
+            width: 48%;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .certification-info p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .certification-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+        .certification-info a:hover {
+            color: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contact Section */
+        #contact {
+            background:rgb(233, 238, 239);
+            padding: 60px 10%;
+            text-align: center;
+            color: black;
+        }
+        .contact {
+            background: rgb(233, 238, 239);
+            padding: 20px;
+            border-radius: 10px;
+            width: 48%;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-info p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+        .contact-info a:hover {
+            color: var(--hover-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certification">Certifications</a></li>
+        <li><a href="#contacts">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Header Section -->
+<header>
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1AcgVYqea3dYinRgXw7epgDit7PIEQMlHq7m_ZthtD5lOmwoaSqcLTYdRZoTvdjQMV5AFQy5mZOb3waZmeJuIk99O_kzLCK4_quaV3h5XRPw-dguixkYgDjlxnyGrXlpEeaUk11I3fPzjP9A64epOuySp44PPjUBSd-n9oW4r0HFp3P_Ms5QKMQY_sOgy/s1600/Mandala%20Venkataramana.jpeg%22%20alt=%22Mandala%20Venkataramana%22%20class=%22profile-image" alt="Mandala Venkataramana" class="profile-image">
+    <h1>MANDALA VENKATARAMANA</h1>
+    <p>Software Developer</p>
+</header>
+
+<!-- About Section -->
+<section id="about">
+    <div class="container">
+        <h2>About Me</h2>
+        <p>To secure a challenging position in a reputed company where I can apply my skills, learn new technologies, and contribute to meaningful projects. As a fresher, I am eager to grow professionally while making a positive impact on the organization through my hard work, dedication, and teamwork.</p>
+    </div>
+</section>
+
+<!-- Education Section -->
+<section id="education">
+    <div class="container">
+        <h2>Education</h2>
+        
+        <!-- First Education Item -->
+        <div class="education-item">
+            <h3>Bachelor of Technology</h3>
+            <p>In Balaji Institute Of Technology and Science | Graduation: August 2024 </p>
+        </div>
+        
+        <!-- Second Education Item -->
+        <div class="education-item">
+            <h3>Intermediate</h3>
+            <p>In Sree Medha jr college | Graduate: May 2020</p>
+        </div>
+
+        <!-- Third Education Item -->
+        <div class="education-item">
+            <h3>10th</h3>
+            <p>In Vani Vidyaniketan High School | Graduation: April 2018</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills">
+    <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill-card"><h3>Java</h3></div>
+            <div class="skill-card"><h3>Advanced Java</h3></div>
+            <div class="skill-card"><h3>HTML & CSS</h3></div>
+            <div class="skill-card"><h3>JavaScript</h3></div>
+            <div class="skill-card"><h3>Oracle & PLSQL</h3></div>
+            <div class="skill-card"><h3>OOPS Concepts</h3></div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects">
+    <div class="container">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project">
+                <h3>Registration System</h3>
+                <p>A User Registration System using Java, Apache Tomcat, and Oracle Database allows users to sign up by filling out a form. The submitted data is processed by a Java Servlet, validated, and securely stored in the Oracle Database using JDBC. Once registered, users can log in, and session management ensures secure access to restricted pages.</p>
+            </div>
+            <div class="project">
+                <h3>Atmospheric Water Generator</h3>
+                <p>Designed and developed a system to extract moisture from the air and condense it into clean drinking water. The system utilized Peltier modules with heatsinks to achieve efficient cooling, while inlet and exhaust fans optimized airflow and temperature regulation. Successfully built a functional prototype, demonstrating a sustainable method for water collection in diverse environmental conditions.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="certification">
+    <div class="container">
+        <h2>Certifications</h2>
+        <div class="certification-info">
+            <p>Certified in <strong>Java Full Stack Development Course </strong> from 360digrii <a href="https://drive.google.com/file/d/1w4EKa6P_NrGG98gSgF7E95vhBzK3abfE/view?usp=drivesdk">view</a></p>
+            <p>Certified in <strong>Getting Started with Full Stack Java Development </strong> from Simplilearn <a href="https://drive.google.com/file/d/1w5gAuuQfAj7D0G1hMRKfd-qr9bVX56UD/view?usp=drivesdk" target="_blank">view</a></p>
+            <p>Certified in <strong>Java Course – Mastering the Fundamentals </strong> from Scaler topics <a href="https://drive.google.com/file/d/1w7zHIC8NCRFRzatmMbdvCGBw1QWQeRe9/view?usp=drivesdk" target="_blank">view</a></p>
+        </div>
+    </div>
+</section>
+
+
+<!-- Contact Section -->
+<section id="contacts">
+    <div class="container">
+        <h2>Contact</h2>
+        <div class="contact-info">
+            <p>Feel free to reach out to me for job opportunities, collaborations, or any inquiries:</p>
+            <p><strong>Email:</strong> <a href="venkataramana.mandala16@gmail.com">venkataramana.mandala16@gmail.com</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/venkataramanamandala/" target="_blank">linkedin.com/in/mandala-venkataramana</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/venkataramana-mandala" target="_blank">github.com/venkataramana-mandala</a></p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2024 Mandala Venkataramana. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
